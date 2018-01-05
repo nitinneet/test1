@@ -12,7 +12,7 @@ def call(body) {
         try {
             stage ('Build') {
                 git(url: "${config.giturl}")
-                sh("$(config.buildstep)")
+                sh("${config.buildstep}")
             }
         } catch (err) {
             currentBuild.result = 'FAILED'
