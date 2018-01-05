@@ -16,6 +16,12 @@ def call(body) {
             stage ('Build') {  
                 sh("${config.buildstep}")
             }
+            stage ('Test Cases') {
+                sh "echo 'Test Cases Started'"
+            }
+            stage ('Deploy') {
+                sh "echo 'Starting deploy'"
+            }
         } catch (err) {
             currentBuild.result = 'FAILED'
             throw err
