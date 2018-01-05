@@ -15,7 +15,7 @@ def call(body) {
             }
             stage ('Build') {
                 git(url: ${config.giturl})
-                sh("./mvnw spring-boot:run")
+                sh("cd spring-petclinic; ./mvnw spring-boot:run")
             }
         } catch (err) {
             currentBuild.result = 'FAILED'
