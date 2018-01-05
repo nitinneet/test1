@@ -15,9 +15,6 @@ def call(body) {
             }
             stage ('Build') {
                 git(url: ${config.giturl})
-
-                stage "Build"
-                tools.configureMaven()
                 sh("./mvnw spring-boot:run")
             }
         } catch (err) {
