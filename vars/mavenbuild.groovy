@@ -10,9 +10,6 @@ def call(body) {
         deleteDir()
 
         try {
-            stage ('setup') {
-                pom = load "lib/pom.groovy"
-            }
             stage ('Build') {
                 git(url: ${config.giturl})
                 sh("cd spring-petclinic; ./mvnw spring-boot:run")
