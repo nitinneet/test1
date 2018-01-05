@@ -11,7 +11,7 @@ def call(body) {
 
         try {
             stage ('Build') {
-                git(url: ${config.giturl})
+                git(url: "${config.giturl}")
                 sh("cd spring-petclinic; ./mvnw spring-boot:run")
             }
         } catch (err) {
