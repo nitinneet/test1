@@ -10,8 +10,10 @@ def call(body) {
         deleteDir()
 
         try {
-            stage ('Setup') {
-                git(url: "${config.giturl}")
+            stage('checkout git') {
+                steps {
+                    git branch: "${config.branch}", credentialsId: "${config.credentialsId}", url: "${config.scmUrl}"
+                }
             }
             stage ('Build') {  
                 sh("${config.buildstep}")
