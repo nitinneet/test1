@@ -11,7 +11,7 @@ def call(body) {
 
         try {
             stage ('Setup') {
-                git(url: "${config.giturl}")
+                git(url: "${config.giturl}", branch: 'master')
             }
             stage ('Build') {  
                 sh("${config.buildstep}")
@@ -33,3 +33,5 @@ def call(body) {
             currentBuild.result = 'FAILED'
             throw err
         }
+    }
+}
