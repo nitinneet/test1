@@ -8,5 +8,6 @@ def call(body) {
     body()
 
 echo("Compiling ${config.directory}")
-compileDirectory("${config.script}", "${config.directory}")
+checkout()
+//compileDirectory("${config.script}", "${config.directory}")
 }

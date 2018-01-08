@@ -1,25 +1,15 @@
 package org.k9.scm
 
-class Git {
-static def compileDirectory(script, directory) {
-  println "INFO ${script}"
-  println "INFO: ${directory}"
-}
-}
-
-/*
 class Git implements Serializable {
   String branch
-  def stages
+  def scmurl
 
-  Git(stages) {
-    this.branch = stages.env.branch
-    this.stages = stages
+  Git(branch,scmurl) {
+    this.branch = branch
+    this.scmurl = scmurl
   }
 
   def checkout() {
     stages.echo 'checking out code from scm..'
-    //checkout scm here, ie. stages.checkout...
   }
 }
-*/
