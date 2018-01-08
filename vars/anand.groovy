@@ -10,9 +10,7 @@ def call(body) {
 echo("Compiling ${config.directory}")
 
     node {
-       stage ('test') {
           checkout()
-       }
     }
 
 //compileDirectory("${config.script}", "${config.directory}")
