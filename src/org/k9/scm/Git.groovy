@@ -10,7 +10,8 @@ class Git implements Serializable {
     this.scmurl = scmurl
   }
 
-  def checkout() {
+  @NonCPS
+  void checkout() {
     stages.echo 'checking out code from scm..'
   }
 }
