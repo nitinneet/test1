@@ -8,6 +8,12 @@ def call(body) {
     body()
 
 echo("Compiling ${config.directory}")
-checkout()
+
+    node {
+       stage ('test') {
+          checkout()
+       }
+    }
+
 //compileDirectory("${config.script}", "${config.directory}")
 }
