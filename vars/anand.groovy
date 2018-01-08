@@ -10,7 +10,7 @@ def call(body) {
     body()
 
     Yaml parser = new Yaml()
-    Map pipelineDefinition = parser.load(new File(pwd() + 'pipeline.yml').text)
+    //Map pipelineDefinition = parser.load(new File(pwd() + 'pipeline.yml').text)
 
     node {
       adm = new scm.Git(this,config)
