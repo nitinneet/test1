@@ -21,6 +21,7 @@ def call(body) {
             }
             stage ('Deploy') {
                 sh "echo 'Starting deploy'"
+                sleep 10000
             }
         } catch (err) {
             currentBuild.result = 'FAILED'
