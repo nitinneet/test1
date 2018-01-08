@@ -1,6 +1,6 @@
 import org.k9.*
-@Grab('org.yaml:snakeyaml:1.17')
 import org.yaml.snakeyaml.Yaml
+import hudson.model.*
 
 def call(body) {
 
