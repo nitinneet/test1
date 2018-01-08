@@ -10,7 +10,7 @@ def call(body) {
     body()
 
     node {
-      new Git(this,config).checkout()
+      new scm.Git(this,config).checkout()
     }
 
 }
