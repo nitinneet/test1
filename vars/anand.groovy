@@ -1,4 +1,4 @@
-import org.k9.scm.Admin
+import org.k9.scm.Git
 
 def call(body) {
 
@@ -9,8 +9,8 @@ def call(body) {
 
 
 node {
-  adm = new Admin(this)
-  adm.setFolderDescription("python­projects","Description set withing Global Pipeline")
+  adm = new Git("${config.giturl}","${config.branch}")
+  adm.checkout()
 }
 
 
