@@ -12,7 +12,13 @@ def call(body) {
         try {
             stage('checkout git') {
                 steps {
-                    git(branch: "${config.branch}", url: "${config.scmUrl}")
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: '*/${config.branch}']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [[$class: 'CleanCheckout']], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: '${config.credentialsId}', url: '${config.scmUrl}']]
+                    ])
                 }
             }
             stage ('Build') {  
