@@ -1,6 +1,4 @@
 import org.k9.*
-import org.yaml.snakeyaml.Yaml
-import hudson.model.*
 
 def call(body) {
 
