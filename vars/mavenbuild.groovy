@@ -1,3 +1,5 @@
+import static org.k9.scm.Git.*
+
 def call(body) {
 
     def config = [:]
@@ -10,6 +12,9 @@ def call(body) {
         deleteDir()
 
         try {
+            stage ('test') {
+		checkout()
+            }
             stage ('Setup') {
                 git(url: "${config.giturl}", branch: "${config.branch}", credentialsId: "${config.credentialsId}")
             }
