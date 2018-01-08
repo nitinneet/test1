@@ -10,7 +10,7 @@ def call(body) {
 
 node {
   ado = new Git("${config.giturl}","${config.branch}")
-  ado.checkout()
+  //ado.checkout()
 }
 
 
