@@ -8,7 +8,7 @@ def call(body) {
     body()
 
     node {
-      adm = new scm.Git.Git(this,config)
+      adm = new Git.Git(this,config)
       adm.checkout()
     }
 
