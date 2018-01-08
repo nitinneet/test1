@@ -13,6 +13,5 @@ class Git implements Serializable {
 
 void setFolderDescription(folder, description) {
 def f = Jenkins.instance.getItemByFullName(folder)
-f.setDescription(description)
 }
 }
