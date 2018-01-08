@@ -1,6 +1,6 @@
 package org.k9.scm
 
-class PythonCompiler {
+class Git {
 static def compileDirectory(script, directory) {
   echo "INFO: ${script}"
   echo "INFO: ${directory}"
