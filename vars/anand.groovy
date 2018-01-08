@@ -7,8 +7,10 @@ def call(body) {
     body.delegate = config
     body()
 
+
 node {
-adm = new Admin(this)
+  adm = new Admin(this)
+  adm.setFolderDescription("python­projects","Description set withing Global Pipeline")
 }
 
 
