@@ -8,7 +8,8 @@ def call(body) {
     body()
 
     node {
-      new scm.Git(this,config).checkout()
+      a = new scm.Git(this,config).checkout()
+      b = new builder.Maven(this,config).build()
     }
 
 }
