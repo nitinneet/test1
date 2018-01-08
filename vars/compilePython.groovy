@@ -1,4 +1,4 @@
-import static eu.inuits.PythonCompiler.*
+//import static eu.inuits.PythonCompiler.*
 
 
 def call(body) {
