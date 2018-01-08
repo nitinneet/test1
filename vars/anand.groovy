@@ -1,4 +1,4 @@
-import static org.k9.scm.Git
+import static org.k9.scm.Git.*
 
 def call(body) {
 
