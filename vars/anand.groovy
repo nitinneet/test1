@@ -9,12 +9,8 @@ def call(body) {
     body.delegate = config
     body()
 
-    Yaml parser = new Yaml()
-    //Map pipelineDefinition = parser.load(new File(pwd() + 'pipeline.yml').text)
-
     node {
-      adm = new scm.Git(this,config)
-      adm.checkout()
+      new scm.Git(this,config).checkout()
     }
 
 }
