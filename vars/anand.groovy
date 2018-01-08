@@ -1,4 +1,4 @@
-import static org.k9.scm.Admin
+import org.k9.scm.Admin
 
 def call(body) {
 
