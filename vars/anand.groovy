@@ -9,7 +9,7 @@ def call(body) {
 
 
 node {
-  adm = new Git(config)
+  adm = new Git(this,config)
   adm.checkout()
 }
 
