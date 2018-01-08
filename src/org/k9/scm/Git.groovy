@@ -1,3 +1,5 @@
+package org.k9.scm
+
 class Git implements Serializable {
   String branch
   def stages

@@ -1,4 +1,5 @@
 package eu.inuits
+
 class PythonCompiler {
 static def compileDirectory(script, directory) {
 script.sh """find ${directory} ­name '*.py' \
