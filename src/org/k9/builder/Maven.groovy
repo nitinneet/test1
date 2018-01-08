@@ -6,7 +6,7 @@ class Maven implements Serializable {
   def config
   def script
 
-  Git(script,config) {
+  Maven(script,config) {
     this.config = config
     this.script = script
   }
