@@ -2,7 +2,7 @@ package org.k9.scm
 import com.cloudbees.groovy.cps.NonCPS
 
 class Git implements Serializable {
-  String branch
+  def branch
   def scmurl
 
   Git(branch,scmurl) {
