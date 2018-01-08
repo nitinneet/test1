@@ -12,7 +12,7 @@ class Git implements Serializable {
   }
 
   void checkout() {
-    this.script.stage('setup') {
+    this.script.stage('Initialize') {
       this.script.git(url: this.config.giturl, branch: this.config.branch)
     }
   }
