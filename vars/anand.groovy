@@ -11,7 +11,7 @@ def call(body) {
 echo("Compiling ${config.directory}")
 
     node {
-          one = new Git('123','abc')
+          one = new org.k9.scm.Git('123','abc')
           one.checkout()
     }
 
