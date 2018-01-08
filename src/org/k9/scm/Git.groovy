@@ -12,11 +12,6 @@ class Git implements Serializable {
   }
 
   void checkout() {
-    return "anand"
+    git(url: this.scmurl, branch: this.branch)
   }
-
-  void setFolderDescription(folder, description) {
-    def f = Jenkins.instance.getItemByFullName(folder)
-  }
-
 }
