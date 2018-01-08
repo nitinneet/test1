@@ -1,4 +1,4 @@
-package eu.inuits
+package org.k9.scm
 import com.cloudbees.groovy.cps.NonCPS
 class Admin implements Serializable {
 def seedFullName = "seed"
