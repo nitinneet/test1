@@ -1,4 +1,4 @@
-package org.k9.scm
+package org.k9.builder
 import com.cloudbees.groovy.cps.NonCPS
 import jenkins.model.Jenkins
 
