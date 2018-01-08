@@ -1,4 +1,4 @@
-import static org.k9.scm.Git.*
+import static org.k9.scm.Git
 
 def call(body) {
 
@@ -11,8 +11,8 @@ def call(body) {
 echo("Compiling ${config.directory}")
 
     node {
-          one = new org.k9.scm.Git('123','abc')
-          one.checkout()
+          adm = new Git('123','abc')
+          adm.checkout()
     }
 
 //compileDirectory("${config.script}", "${config.directory}")
