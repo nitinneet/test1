@@ -11,7 +11,7 @@ def call(body) {
 
         try {
             stage ('Setup') {
-                git(url: "${config.scmUrl}")
+                git(url: "${config.giturl}")
             }
             stage ('Build') {  
                 sh("${config.buildstep}")
@@ -21,13 +21,6 @@ def call(body) {
             }
             stage ('Deploy') {
                 sh "echo 'Starting deploy'"
-                sleep "${config.sleep}"
-            }
-            stage('Build') {
-                sh 'mvn -B -V -U -e clean package'
-            }
-            stage('Archive') {
-                junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
             }
         } catch (err) {
             currentBuild.result = 'FAILED'
