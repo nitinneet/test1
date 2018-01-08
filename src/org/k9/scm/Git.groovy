@@ -3,15 +3,13 @@ import com.cloudbees.groovy.cps.NonCPS
 import jenkins.model.Jenkins
 
 class Git implements Serializable {
-  def branch
-  def scmurl
+  def config
 
-  Git(branch,scmurl) {
-    this.branch = branch
-    this.scmurl = scmurl
+  Git(config) {
+    this.config = config
   }
 
   void checkout() {
-    git(url: this.scmurl, branch: this.branch)
+    git(url: this.config.giturl, branch: this.config.branch)
   }
 }
