@@ -10,24 +10,10 @@ def call(body) {
         deleteDir()
 
         try {
-            stage('Checkout') {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: "${config.branch}",
-                    extensions: scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
-                    userRemoteConfigs: [[url: "${config.scmUrl}"]],
-                    doGenerateSubmoduleConfigurations: false
-                ])
-            }
             stage('checkout git') {
                 steps {
-                    checkout([$class: 'GitSCM', 
-                        branches: [[name: '*/${config.branch}']], 
-                        doGenerateSubmoduleConfigurations: false, 
-                        extensions: [[$class: 'CleanCheckout']], 
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [[credentialsId: '${config.credentialsId}', url: '${config.scmUrl}']]
-                    ])
+    git poll: false, changelog: false, url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'master'
+    load script 
                 }
             }
             stage ('Build') {  
