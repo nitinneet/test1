@@ -1,4 +1,4 @@
-import static org.k9.scm.Git.*
+import static org.k9.scm.Git
 
 def call(body) {
 
@@ -7,10 +7,12 @@ def call(body) {
     body.delegate = config
     body()
 
+
 echo("Compiling ${config.directory}")
 
     node {
-          checkout()
+          one = new Git('123','abc')
+          one.checkout()
     }
 
 //compileDirectory("${config.script}", "${config.directory}")
