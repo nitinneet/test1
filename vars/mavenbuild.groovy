@@ -12,7 +12,7 @@ def call(body) {
         try {
             stage('checkout git') {
                 steps {
-                    git branch: "${config.branch}", credentialsId: "${config.credentialsId}", url: "${config.scmUrl}"
+                    git(branch: "${config.branch}", credentialsId: "${config.credentialsId}", url: "${config.scmUrl}")
                 }
             }
             stage ('Build') {  
