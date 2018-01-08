@@ -10,6 +10,15 @@ def call(body) {
         deleteDir()
 
         try {
+            stage('Checkout') {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: "${config.branch}",
+                    extensions: scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
+                    userRemoteConfigs: [[url: "${config.scmUrl}"]],
+                    doGenerateSubmoduleConfigurations: false
+                ])
+            }
             stage('checkout git') {
                 steps {
                     checkout([$class: 'GitSCM', 
