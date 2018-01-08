@@ -1,5 +1,13 @@
 package org.k9.scm
 
+class PythonCompiler {
+static def compileDirectory(script, directory) {
+  echo "INFO: ${script}"
+  echo "INFO: ${directory}"
+}
+}
+
+/*
 class Git implements Serializable {
   String branch
   def stages
@@ -14,3 +22,4 @@ class Git implements Serializable {
     //checkout scm here, ie. stages.checkout...
   }
 }
+*/
