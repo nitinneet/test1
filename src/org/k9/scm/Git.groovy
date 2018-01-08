@@ -1,5 +1,6 @@
 package org.k9.scm
 import com.cloudbees.groovy.cps.NonCPS
+import jenkins.model.Jenkins
 
 class Git implements Serializable {
   def branch
@@ -10,8 +11,8 @@ class Git implements Serializable {
     this.scmurl = scmurl
   }
 
-  @NonCPS
-  void checkout() {
-    stages.echo 'checking out code from scm..'
-  }
+void setFolderDescription(folder, description) {
+def f = Jenkins.instance.getItemByFullName(folder)
+f.setDescription(description)
+}
 }

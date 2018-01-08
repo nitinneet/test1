@@ -9,8 +9,8 @@ def call(body) {
 
 
 node {
-  ado = new Git("${config.giturl}","${config.branch}")
-  ado.checkout()
+  adm = new Git("${config.giturl}","${config.branch}")
+  adm.setFolderDescription("python­projects","Description set withing Global Pipeline")
 }
 
 
