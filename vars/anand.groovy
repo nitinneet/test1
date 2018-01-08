@@ -11,6 +11,7 @@ def call(body) {
 node {
   adm = new Git("${config.giturl}","${config.branch}")
   adm.setFolderDescription("python­projects","Description set withing Global Pipeline")
+  adm.checkout()
 }
 
 
