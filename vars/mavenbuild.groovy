@@ -10,11 +10,8 @@ def call(body) {
         deleteDir()
 
         try {
-            stage('checkout git') {
-                steps {
-    git poll: false, changelog: false, url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'master'
-    load script 
-                }
+            stage ('Setup') {
+                git(url: "${config.giturl}", branch: 'master')
             }
             stage ('Build') {  
                 sh("${config.buildstep}")
@@ -26,9 +23,13 @@ def call(body) {
                 sh "echo 'Starting deploy'"
                 sleep "${config.sleep}"
             }
+            stage('Build') {
+                sh 'mvn -B -V -U -e clean package'
+            }
+            stage('Archive') {
+                junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
+            }
         } catch (err) {
             currentBuild.result = 'FAILED'
             throw err
         }
-    }
-}
