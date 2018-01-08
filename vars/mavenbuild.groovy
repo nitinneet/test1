@@ -11,7 +11,7 @@ def call(body) {
 
         try {
             stage ('Setup') {
-                git(url: "${config.giturl}")
+                git(url: "${config.scmUrl}")
             }
             stage ('Build') {  
                 sh("${config.buildstep}")
