@@ -3,7 +3,7 @@ package org.k9.utilities
 class GetRequest implements Serializable {
   def config
 
-  Git(config) {
+  GetRequest(config) {
     this.config = config
   }
 

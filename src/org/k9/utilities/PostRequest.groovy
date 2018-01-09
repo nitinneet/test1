@@ -1,9 +1,9 @@
 package org.k9.utilities
 
-class GetRequest implements Serializable {
+class PostRequest implements Serializable {
   def config
 
-  Git(config) {
+  PostRequest(config) {
     this.config = config
   }
 

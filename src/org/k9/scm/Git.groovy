@@ -1,6 +1,5 @@
 package org.k9.scm
-import com.cloudbees.groovy.cps.NonCPS
-import jenkins.model.Jenkins
+import org.k9.*
 
 class Git implements Serializable {
   def config
@@ -14,6 +13,7 @@ class Git implements Serializable {
   void checkout() {
     if (this.config.giturl) {
        this.script.stage('Initialize') {
+         new scm.GetRequest(config).get();
          this.script.git(url: this.config.giturl, branch: this.config.branch.trim())
        }
     } else {
