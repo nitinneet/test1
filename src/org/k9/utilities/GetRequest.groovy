@@ -9,7 +9,8 @@ class GetRequest implements Serializable {
 
   void get() {
     if (this.config.url.trim()) {
-        def get = new URL(this.config.url.trim()).openConnection();
+      try {
+        def get = new URL("http://192.168.202.152/").openConnection();
         def getRC = get.getResponseCode();
         println(getRC);
         if(getRC.equals(200)) {
@@ -17,6 +18,9 @@ class GetRequest implements Serializable {
         } else {
             error get.getInputStream().getText()
         }
+      } catch (e) {
+        throw e
+      }
     } else {
         error "no URL found for GET request"
     }
