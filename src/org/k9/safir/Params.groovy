@@ -9,8 +9,7 @@ class Params {
     this.script = script
   }
 
-  void build() {
-      def x = "anand"
-      return x
+  void getBuild() {
+      return "anand"
   }
 }
