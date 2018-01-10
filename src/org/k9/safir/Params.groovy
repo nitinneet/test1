@@ -3,6 +3,7 @@ package org.k9.safir
 class Params {
   def config
   def script
+  def params
 
   Params(script,config) {
     this.config = config
