@@ -10,7 +10,7 @@ class Params {
   }
 
   void build() {
-      def params = "anand"
-      return params
+      def x = "anand"
+      return x
   }
 }
