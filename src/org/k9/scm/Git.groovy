@@ -10,7 +10,7 @@ class Git implements Serializable {
     this.script = script
   }
 
-  void checkout(url=false, branch=false) {
+  void checkout(def url=false, def branch=false) {
     if (url != false) {
        this.giturl = url
        if (branch != false) {
