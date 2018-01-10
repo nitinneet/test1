@@ -11,6 +11,12 @@ class Git implements Serializable {
   }
 
   void checkout(url=false, branch=false) {
+    if (url != false) {
+       this.giturl = url
+       if (branch != false) {
+           this.branch = branch
+       }
+    }
     if (this.config.giturl) {
        this.script.stage('Initialize') {
          this.script.git(url: this.config.giturl, branch: this.config.branch.trim())
