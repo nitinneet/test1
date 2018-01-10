@@ -12,9 +12,9 @@ class Git implements Serializable {
 
   void checkout(def url=false, def branch=false) {
     if (url != false) {
-       this.giturl = url
+       this.config.giturl = url
        if (branch != false) {
-           this.branch = branch
+           this.config.branch = branch
        }
     }
     if (this.config.giturl) {
