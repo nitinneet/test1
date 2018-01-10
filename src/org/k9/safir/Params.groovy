@@ -8,7 +8,7 @@ class Params implements Serializable {
     this.config = config
     this.script = script
     this.params = this.script.input ( id: 'params', parameters: [
-      [$class: 'ChoiceParameterDefinition',name: 'CLUSTER_APP_DOMAIN',choices: 'ocp-master.infra.paas.gcp.com\n10.10.10.1.xip.io',description: ''],
+      [$class: 'ChoiceParameterDefinition',name: 'CLUSTER_APP_DOMAIN',choices: 'https://master.marthanda.in',description: ''],
       [$class: 'CredentialsParameterDefinition', credentialType: 'org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl', defaultValue: '', description: '',name: 'openShiftToken',required: true]
     ])
   }
