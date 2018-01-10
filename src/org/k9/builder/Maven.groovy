@@ -1,6 +1,4 @@
 package org.k9.builder
-import com.cloudbees.groovy.cps.NonCPS
-import jenkins.model.Jenkins
 
 class Maven implements Serializable {
   def config
