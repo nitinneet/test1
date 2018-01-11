@@ -6,7 +6,7 @@ podTemplate(cloud: 'mcluster',label: 'anotherpod',  containers: [
 }
 
 
-node('maven') {
+node('anotherpod') {
 openshift.withCluster( 'mcluster' ) {
     openshift.withProject( 'anand' ) {
         echo "Hello from project: ${openshift.project()}"
