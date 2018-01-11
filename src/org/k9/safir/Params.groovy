@@ -7,9 +7,10 @@ class Params {
   Params(script,config) {
     this.config = config
     this.script = script
+    this.params = "Anand Kumar"
   }
 
   void getBuild() {
-      return "Anand Kumar"
+      return this.params
   }
 }
