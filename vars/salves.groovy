@@ -18,6 +18,10 @@ podTemplate(
     ]
 )
 node('maven-node') {
-        sh "echo Hello world"
+openshift.withCluster( 'mcluster' ) {
+    openshift.withProject( 'anand' ) {
+        echo "Hello from project: ${openshift.project()}"
+    }
+}
 }
 }
