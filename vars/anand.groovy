@@ -10,7 +10,6 @@ def call(body) {
     node {
       new safir.Params(this,config).build();
       new scm.Git(this,config).checkout("https://github.com/kloud9nyc/daac.git","master");
-      new builder.Maven(this,config).build();
     }
 
 }
