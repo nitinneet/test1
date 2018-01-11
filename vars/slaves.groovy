@@ -8,6 +8,10 @@ def call() {
         	)
         ]
   ) {
-    body()
+
+node('anand') {
+   sh "echo hello world"
+}
+
     }
 }
