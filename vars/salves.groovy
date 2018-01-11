@@ -1,6 +1,7 @@
 def call (slave){
 
 podTemplate(
+    cloud: 'https://master.marthanda.in',
     name: 'maven-node',
     label: 'maven-node',
     namespace: 'maven-node',
