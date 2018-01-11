@@ -8,8 +8,7 @@ def call(body) {
     body()
 
     node {
-      def mm = new safir.Params().Build();
-      def me = new safir.Params().getBuild();
+      def me = new safir.Params(this,config).getBuild();
       new scm.Git(this,config).checkout("https://github.com/kloud9nyc/daac.git","master");
     }
 
