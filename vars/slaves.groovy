@@ -10,7 +10,11 @@ def call() {
   ) {
 
 node('anand') {
-   sh "echo hello world"
+openshift.withCluster( 'mcluster' ) {
+    openshift.withProject( 'anand' ) {
+        echo "Hello from project: ${openshift.project()}"
+    }
+}
 }
 
     }
