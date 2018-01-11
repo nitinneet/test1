@@ -9,7 +9,7 @@ def call(body) {
 
     node {
       //new safir.Params(this,config).getBuild();
-      new scm.Git(this,config).checkout("https://github.com/kloud9nyc/daac.git","master");
+      //new scm.Git(this,config).checkout("https://github.com/kloud9nyc/daac.git","master");
     }
 
 }
