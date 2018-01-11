@@ -1,6 +1,6 @@
 package org.k9.safir
 
-class Params implements Serializable {
+class Params {
   def config
   def script
 
