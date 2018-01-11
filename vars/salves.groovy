@@ -5,7 +5,7 @@ podTemplate(
     name: 'maven-node',
     label: 'maven-node',
     namespace: 'maven-node',
-    serviceAccount: '',
+    serviceAccount: 'jenkins',
     slaveConnectTimeout: 120,
     activeDeadlineSeconds: 30 * 120,
     containers: [
