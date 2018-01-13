@@ -11,7 +11,6 @@ class Git implements Serializable {
   }
 
   void checkout(def url=false, def branch=false) {
-    echo this.config
     if (url != false) {
        this.config.giturl = url
        if (branch != false) {
